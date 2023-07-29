@@ -4,15 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Room;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
-use App\Models\Service;
-use App\Models\RoomType;
-use App\Models\Order;
-use App\Models\OrderRoom;
-use App\Models\OrderServices;
+use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
@@ -23,16 +18,14 @@ class UserController extends Controller
   public function getusers()
   {
       $users = User::all(); 
-      $orders = Order::all();
-      return view('backend.users', compact('users', 'orders'));
+      return view('backend.users', compact('users'));
   }     
 
   // add user
     public function getuseradd()
   {
       $users = User::all(); 
-      $orders = Order::all();
-      return view('backend.useradd', compact('users', 'orders'));
+      return view('backend.useradd', compact('users'));
   }
 
   //
@@ -109,22 +102,12 @@ class UserController extends Controller
   //
   public function getuseredit($id)
   {           
-      $orders = Order::all();
       $users = User::all();
       $user = User::findOrFail($id);
       if ($user->email === 'admin@admin.com') {
            return redirect()->back()->with('error', 'Cannot edit admin account');
       }
-      return view('backend.useredit', compact('user','users', 'orders'));
-  }
-
-  // show room types
-   public function getroomtypes()
-  {
-      $orders = Order::all();
-      $users = User::all();
-      $roomTypes = RoomType::all();
-      return view('backend.roomtypes', compact('roomTypes','users', 'orders'));
+      return view('backend.useredit', compact('user','users'));
   }
 
 }

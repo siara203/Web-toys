@@ -23,7 +23,7 @@
                     </svg>
                 </a>
                 <ul id="people" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                  <li class="active">
+                  <li class="">
                                 <a href="{{ url('admin-users') }}">
                                     <i class="las la-minus"></i><span>Users</span>
                                 </a>
@@ -46,7 +46,7 @@
                     </svg>
                 </a>
                 <ul id="purchase" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
+                        <li class="active">
                                 <a href="{{ url('admin-products') }}">
                                     <i class="las la-minus"></i><span>List Products</span>
                                 </a>
@@ -63,65 +63,56 @@
     </nav>
    
 </div>
-</div> 
+</div>   
 <!-- main -->    
-      <div class="content-page">
+<div class="content-page">
      <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                     <div>
-                        <h4 class="mb-3"> List Users </h4>
-                        <p class="mb-0">@include('errors.note') </p>  
+                        <h4 class="mb-3"> List Products</h4>
+                        <p class="mb-0">@include('errors.note')</p>
                     </div>
-                    <a href="{{ url('admin-user-add') }}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add User</a>
+                    <a  href="{{ url('admin-toy-add') }}"class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Product</a>
                 </div>
             </div>
             <div class="col-lg-12">
-                <div class="table-responsive rounded mb-3">
+            <div class="table-responsive rounded mb-3">
                 <table class="data-table table mb-0 tbl-server-info">
                     <thead class="bg-white text-uppercase">
                         <tr class="ligth ligth-data">
-                            <th>Full Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Address</th>
-                            <th>Role</th>
-                           <th>Password</th>
-                            <th>Date created</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>SKU</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody class="ligth-body">
-                        @foreach($users as $user)
+                        @foreach($products as $product)
                         <tr>
-                            <td>{{ $user->full_name }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->phone }}</td>
-                            <td>{{ $user->address }}</td>
-                            <td>{{ $user->role }}</td>
-                            <td>{{ str_repeat('*', rand(8, 15)) }}</td>
-                            <td>{{ $user->created_at->format('D, h:i A, d/m/Y') }}</td>
+                            <td>
+                                <img src="{{ asset('images/products/'.$product->image) }}" class="img-fluid rounded avatar-50 mr-3" alt="{{ $product->name }}">
+                            </td>
+                            <td>{{ $product->name }}</td>
+                            <td>$ {{ $product->price }}</td>
+                            <td>{{ $product->sku }}</td>
                             <td>
                                 <div class="d-flex align-items-center list-action">
-                                <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('getuseredit', ['id' => $user->id]) }}">
-                                        <i class="ri-pencil-line mr-0"></i>
-                                    </a>
-
-                                        <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="Delete"
-                                    href="{{ route('getuserdelete', $user->id) }}"><i class="ri-delete-bin-line mr-0"></i></a>
-
+                                    <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('getproductedit', ['id' => $product->id]) }}"><i class="ri-pencil-line mr-0"></i></a>
+                                    <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="Delete" href="{{ route('deleteproduct', ['id' => $product->id]) }}"><i class="ri-delete-bin-line mr-0"></i></a>
                                 </div>
                             </td>
                         </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                </div>
-            </div>
+                    @endforeach                    
+            </tbody>
+        </table>
+    </div>
+</div>
         </div>
+    </div>
         <!-- Page end  -->
-    </div> 
-</div> 
+    </div>
     <!-- Wrapper End-->
 @stop

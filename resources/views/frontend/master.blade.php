@@ -61,7 +61,7 @@
 <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">        
           <li><a href="{{ url('/') }}">Home</a></li>
-          <li><a href="{{ url('/toys') }}">Products</a></li>
+          <li><a href="{{ url('/products') }}">Products</a></li>
       <li><a href="{{ url('/introduction') }}">Introduction</a></li>
       <li><a href="{{ url('/services') }}">Trademark</a></li>
       <li><a href="{{ url('/contact') }}">Contact</a></li>
@@ -73,7 +73,7 @@
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{ route('account') }}">Account information</a></li>
+                    <li><a href="#">Account information</a></li>
                     <li><a href="{{asset('logout')}}">Logout</a></li>
                 </ul>
             </li>
@@ -91,10 +91,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-5">
-                    <h4>SDN Hotel</h4>
-                    <p>"Welcome to SDN Hotel, where comfort meets excellence!"</p>
-
-                    <p>At SDN Hotel, we pride ourselves on providing an exceptional experience for all our guests. Whether you're traveling for business or leisure, we are dedicated to making your stay truly memorable.</p>
+                    <h4>Toys Shop</h4>
+                    <p>"Welcome to Toys Shop</p>
                 </div>              
                  
                  <div class="col-sm-3">

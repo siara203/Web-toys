@@ -23,7 +23,7 @@
                     </svg>
                 </a>
                 <ul id="people" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                  <li class="active">
+                  <li class="">
                                 <a href="{{ url('admin-users') }}">
                                     <i class="las la-minus"></i><span>Users</span>
                                 </a>
@@ -46,7 +46,7 @@
                     </svg>
                 </a>
                 <ul id="purchase" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
+                        <li class="active">
                                 <a href="{{ url('admin-products') }}">
                                     <i class="las la-minus"></i><span>List Products</span>
                                 </a>
@@ -63,7 +63,7 @@
     </nav>
    
 </div>
-</div> 
+</div>   
 <!-- main -->    
 <div class="content-page">
      <div class="container-fluid add-form-list">
@@ -72,75 +72,54 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Update Users</h4>                          
-                <p>@include('errors.note')</p>
+                            <h4 class="card-title">Add Product<i class="zmdi zmdi-plus-circle-o-duplicate"></i></h4>
+                            <p>@include('errors.note')</p>
                         </div>
                     </div>
                     <div class="card-body">
-                    <form action="{{ route('postuseredit', $user->id) }}" method="POST" data-toggle="validator">
-                            @csrf
-                            <div class="row"> 
+                    <form action="{{ route('productadd') }}" method="POST" enctype="multipart/form-data" data-toggle="validator">
+                         @csrf
+                            <div class="row">                                
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Image *</label>
+                                        <input multiple type="file" class="form-control image-file" name="image" accept="image/*">
+                                    </div>
+                                </div>
                                 <div class="col-md-12">                      
                                     <div class="form-group">
-                                        <label>Full Name *</label>
-                                        <input type="text" class="form-control" placeholder="Enter Full Name" name="full_name" value="{{ $user->full_name }}" required>
+                                        <label>Name *</label>
+                                        <input name="name" type="text" class="form-control" required placeholder="Enter Name">
                                         <div class="help-block with-errors"></div>
                                     </div>
-                                </div>    
+                                </div>                                                              
+                                <div class="col-md-6">
+                                    <label>Price *</label>
+                                    <div class="input-group">                           
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                    </div>
+                                    <input name="price" type="text" class="form-control" placeholder="Enter Price" >
+                                </div>
+                                </div>  
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Phone Number *</label>
-                                        <input type="text" class="form-control" placeholder="Enter Phone No" name="phone" value="{{ $user->phone }}" required>
-                                        <div class="help-block with-errors"></div>
+                                        <label >SKU</label>                                
+                                        <input name="sku" type="text" class="form-control" placeholder="Enter SKU" >
                                     </div>
-                                </div> 
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Email *</label>
-                                        <input type="text" class="form-control" placeholder="Enter Email" name="email" value="{{ $user->email }}" required>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>  
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Address *</label>
-                                        <input type="text" class="form-control" placeholder="Enter Address" name="address" value="{{ $user->address }}" required>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div> 
-                                <div class="col-md-6">                      
-                                    <div class="form-group">
-                                        <label>Password *</label>
-                                        <input type="password" class="form-control" placeholder="Enter Password" name="password" value="{{ $user->password }}">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>  
-                                <div class="col-md-6">                      
-                                    <div class="form-group">
-                                        <label>Confirm Password *</label>
-                                        <input type="password" class="form-control" placeholder="Enter Confirm Password" value="{{ $user->password }}" name="confirm_password">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div> 
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Role *</label>
-                                        <select name="role" class="selectpicker form-control" data-style="py-0" required>
-                                            <option value="user" {{ $user->role === 'user' ? 'selected' : '' }}>user</option>
-                                            <option value="admin" {{ $user->role === 'admin' ? 'selected' : '' }}>admin</option>
-                                        </select>
-                                    </div>
-                                </div>                              
-                            </div>                            
-                            <button type="submit" class="btn btn-primary mr-2">Update User</button>
+                                  </div>
+                               </div>
+                                                               
+                            <button type="submit" class="btn btn-primary mr-2">Add Product</button>
                             <button type="reset" class="btn btn-danger">Reset</button>
                         </form>
-
-
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Page end  -->
+    </div>
+      </div>
         <!-- Page end  -->
     </div>
       </div>
@@ -149,4 +128,4 @@
     </div>
     </div>
     <!-- Wrapper End-->
-   @stop
+@stop

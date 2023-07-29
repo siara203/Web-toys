@@ -40,7 +40,7 @@
                         <i class="ri-menu-line wrapper-menu"></i>
                         <a href="{{ url('admin-dashboard') }}" class="header-logo">
                             <img src="adm/images/logo.png" class="img-fluid rounded-normal" alt="logo">
-                            <h5 class="logo-title ml-3">SDN Hotel</h5>
+                            <h5 class="logo-title ml-3">Shop Toys</h5>
                         </a>
                     </div>
                     <div class="iq-search-bar device-search">
@@ -93,27 +93,7 @@
                                                                 </div>
                                                             </div>
                                                         </a>
-                                                    @endforeach
-                                                    <h6 style="color: rgb(58, 122, 232)" class="mb-0">New Orders</h6>
-                                                    @foreach($orders->sortByDesc('created_at')->take(2) as $order)
-                                                    
-                                                        <a href="#" class="iq-sub-card">
-                                                            <div class="media align-items-center cust-card py-3 border-bottom">
-                                                                <div class="media-body ml-3">
-                                                                    <div class="d-flex align-items-center justify-content-between">
-                                                                        <h6 class="mb-0">Customer: {{ $order->user->full_name }}</h6>
-                                                                        <small class="text-dark">
-                                                                            <b>{{ date('D, h:i A', strtotime($order->check_in_date)) }}</b></br>
-                                                                            <b>{{ date('d/m/Y', strtotime($order->check_in_date)) }}</b>
-                                                                        </small>
-                                                                    </div>
-                                                                    <small class="mb-0">@foreach($order->rooms as $room)
-                                                                                Room: {{ $room->name }}
-                                                                                @endforeach</small>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    @endforeach   
+                                                    @endforeach 
                                                     <a class="right-ic btn btn-primary btn-block position-relative p-2" href="{{ url('notification') }}"
                                                   role="button">
                                                   View All
