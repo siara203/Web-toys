@@ -100,7 +100,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label >SKU *</label>
-                            <input placeholder="Enter sku"  name="sku" type="text" class="form-control" value="{{ $product->sku }}">
+                            <input placeholder="Enter SKU"  name="sku" type="text" class="form-control" value="{{ $product->sku }}">
                         </div>
                     </div>
                     <div class="col-md-12">

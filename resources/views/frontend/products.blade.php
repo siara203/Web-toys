@@ -20,20 +20,12 @@
           <div class="carousel-inner">
             <div class="carousel-item"><img src="{{ asset('images/products/' . $product->image) }}" class="img-fluid rounded avatar-50 mr-3" alt="image"></div>
           </div>
-          <a class="carousel-control-prev" href="#carousel-{{ $product->id }}" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carousel-{{ $product->id }}" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
         </div>
       </div>
-      <div class="caption">
+      <div class="caption" >
         <h3>{{ $product->name }}</h3>
-        <h4>SKU: {{ $product->price }}</h4>
-        <strong>SKU: {{ $product->sku }}</strong>
+        <p style="color: blue;font-size: 19px;font-family: monospace">Price:$ {{ $product->price }}</p>
+        <p style="color: rgb(119, 123, 125);font-size: 19px;font-family: monospace">SKU: {{ $product->sku }}</p>
         <p class="purchase-info"><a href="#" class="btn btn-primary btn-block text-center" role="button">Add Car</a></p>
       </div>
     </div>
