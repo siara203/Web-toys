@@ -87,7 +87,7 @@
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <label>Price *</label>
                         <div class="input-group">
                             
@@ -95,6 +95,12 @@
                                 <span class="input-group-text">$</span>
                             </div>
                             <input placeholder="Enter Price"  name="price" type="text" class="form-control" value="{{ $product->price }}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label >SKU *</label>
+                            <input placeholder="Enter sku"  name="sku" type="text" class="form-control" value="{{ $product->sku }}">
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -108,12 +114,7 @@
                             <img style="width: 400px;heght:200px" src="{{ asset('images/products/'.$product->image) }}"class="img-fluid" alt="{{ $product->name }}">
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">SKU</label>
-                            <input placeholder="Enter sku"  name="sku" type="text" class="form-control" value="{{ $product->price }}">
-                        </div>
-                    </div>
+                    
                 </div>
 
                 <button type="submit" class="btn btn-primary mr-2">Update Product</button>

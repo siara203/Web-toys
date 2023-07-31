@@ -32,8 +32,8 @@
       </div>
       <div class="caption">
         <h3>{{ $product->name }}</h3>
+        <h4>SKU: {{ $product->price }}</h4>
         <strong>SKU: {{ $product->sku }}</strong>
-        
         <p class="purchase-info"><a href="#" class="btn btn-primary btn-block text-center" role="button">Add Car</a></p>
       </div>
     </div>
