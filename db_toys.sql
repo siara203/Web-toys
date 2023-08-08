@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 29, 2023 lúc 04:24 AM
+-- Thời gian đã tạo: Th8 08, 2023 lúc 11:58 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -113,7 +113,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `sku`, `price`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'LEGO HARRY POTTER', 500, 2, '1690597241_09_87.jpg', '2023-07-29 02:20:41', '2023-07-29 02:20:41');
+(1, 'LEGO HARRY POTTER', 500, 2, '1690597241_09_87.jpg', '2023-07-29 02:20:41', '2023-07-29 02:20:41'),
+(2, 'Baby Pony learns to be a doctor BABY ALIVE F7536', 65432, 9, '1691488564_Baby Pony learns to be a doctor BABY ALIVE F7536.jpg', '2023-08-08 09:56:04', '2023-08-08 09:56:04'),
+(3, 'Patin Neon Inline Yvolution blue NT08B4-size 6-10 years old', 65432765, 97, '1691488593_Patin Neon Inline Yvolution blue NT08B4-size 6-10 years old.jpg', '2023-08-08 09:56:33', '2023-08-08 09:56:33'),
+(4, 'Royal Baby 089R – Red 3-wheel Scooter', 3232345, 7, '1691488609_Royal Baby 089R – Red 3-wheel Scooter.jpg', '2023-08-08 09:56:49', '2023-08-08 09:56:49'),
+(5, 'home toy', 765432234, 5, '1691488629_home.jpg', '2023-08-08 09:57:09', '2023-08-08 09:57:09'),
+(6, 'Transforming robot TOBOT CYCLONE HAWK the leader of the sky', 76543200, 4, '1691488683_Transforming robot TOBOT CYCLONE HAWK the leader of the sky..jpg', '2023-08-08 09:58:03', '2023-08-08 09:58:03');
 
 -- --------------------------------------------------------
 
@@ -213,7 +218,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
