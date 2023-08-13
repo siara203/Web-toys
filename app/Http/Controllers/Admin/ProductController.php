@@ -60,11 +60,6 @@ class ProductController extends Controller
     public function deleteproduct($id)
     {
         $product = Product::findOrFail($id);
-    
-        if ($product->orders()->exists()) {
-            return redirect()->back()->with('error', 'Cannot delete product as it has associated orders.');
-        }
-    
         $imagePath = public_path('images/products/' . $product->image);
     
         if (file_exists($imagePath)) {
